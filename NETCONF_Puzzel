@@ -1,0 +1,43 @@
+Diese Datei enthält die wichtigsten NETCONF- und JUNOS-Elemente für XML. Es wird nur der Start Tag
+angegeben. Den End Tag erhält man durch Ergänzung von "/" vor dem Element-Namen und Streichung aller eventuell vorhandenen Attribute (z.B. Namespaces).
+
+Message Ende:
+
+]]>]]>
+
+NETCONF Elemente:
+
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+<capabilities>
+<capability>urn:ietf:params:netconf:base:1.0</capability>
+<capability>urn:ietf:params:netconf:base:1.1</capability>
+
+<rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+
+<get>
+<get-config>
+<edit-config>
+
+<source>
+<target>
+<running/>
+<candidate/>
+
+<config>
+
+<commit/>
+
+<filter type="subtree">
+
+JUNOS-Elemente:
+
+<configuration xmlns="http://xml.juniper.net/xnm/1.1/xnm">
+<system>
+<host-name>
+<host-name nc:operation="delete">
+
+Platz zum Konstruieren von NETCONF Messages:
+
+<your stuff here>
+
+
