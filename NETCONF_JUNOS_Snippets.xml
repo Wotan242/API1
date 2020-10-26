@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<capabilities>
+		<capability>urn:ietf:params:xml:ns:netconf:base:1.0</capability>
+		<capability>urn:ietf:params:netconf:base:1.0</capability>
+		<capability>urn:ietf:params:netconf:base:1.1</capability>
+	</capabilities>
+</hello>
+]]>]]>
+
+
+<rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<get-config>
+		<source>
+			<running/>
+		</source>
+		<filter type="subtree">
+			<configuration xmlns="http://xml.juniper.net/xnm/1.1/xnm">
+				<system>
+					<host-name/>
+				</system>
+			</configuration>
+		</filter>
+	</get-config>
+</rpc>
+]]>]]>
+
+<rpc message-id="102" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<edit-config>
+		<target>
+			<candidate/>
+		</target>
+		<config>
+			<configuration xmlns="http://xml.juniper.net/xnm/1.1/xnm">
+				<system>
+					<host-name>MX_333</host-name>
+				</system>
+			</configuration>
+		</config>
+	</edit-config>
+</rpc>
+]]>]]>
+
+<rpc message-id="103" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<get-config>
+		<source>
+			<candidate/>
+		</source>
+		<filter type="subtree">
+			<configuration xmlns="http://xml.juniper.net/xnm/1.1/xnm">
+				<system>
+					<host-name/>
+				</system>
+			</configuration>
+		</filter>
+	</get-config>
+</rpc>
+]]>]]>
+
+<rpc message-id="104" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<commit/>
+</rpc>
+]]>]]>
+
+
+
+<rpc message-id="102" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<edit-config>
+		<target>
+			<candidate/>
+		</target>
+		<config>
+			<configuration xmlns="http://xml.juniper.net/xnm/1.1/xnm">
+				<system>
+					<host-name nc:operation="delete"></host-name>
+				</system>
+			</configuration>
+		</config>
+	</edit-config>
+</rpc>
+]]>]]>
