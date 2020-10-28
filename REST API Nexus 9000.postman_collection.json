@@ -1,0 +1,348 @@
+{
+	"info": {
+		"name": "REST API Nexus 9000",
+		"_postman_id": "b10ae6ed-1c41-1c14-696e-16ac8a7d2139",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234Qwer",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"aaaUser\" : {\r\n\r\n\"attributes\" : {\r\n\r\n\"name\" : \"admin\",\r\n\r\n\"pwd\" : \"1234Qwer\"\r\n\r\n}\r\n\r\n}\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://10.10.201.91/api/aaaLogin.json?gui-token-request=yes",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"201",
+						"91"
+					],
+					"path": [
+						"api",
+						"aaaLogin.json"
+					],
+					"query": [
+						{
+							"key": "gui-token-request",
+							"value": "yes"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BGP AS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234Qwer",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "APIC-Challenge",
+						"value": "d0cbc28790f8027bdb1f1461b29cd7e738c26491a9fa56c648180d486144f14c"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bgpEntity\": {\r\n        \"children\": [{\r\n            \"bgpInst\": {\r\n                \"attributes\": {\r\n                    \"asn\": \"12345\"\r\n                }\r\n            }\r\n        }]\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://10.10.201.94/api/mo/sys/bgp.json",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"201",
+						"94"
+					],
+					"path": [
+						"api",
+						"mo",
+						"sys",
+						"bgp.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BGP",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234Qwer",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "APIc-challenge",
+						"value": "3ce6a8f633773cb67b69c7735d12d40d165eeb82eb660d75c1bfed6367b541f2"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bgpEntity\": {\r\n        \"children\": [{\r\n            \"bgpInst\": {\r\n                \"attributes\": {\r\n                    \"asn\": \"12345\"\r\n                }\r\n            }\r\n        }]\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://10.10.201.91/api/mo/sys/bgp.json",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"201",
+						"91"
+					],
+					"path": [
+						"api",
+						"mo",
+						"sys",
+						"bgp.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BGP INS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234Qwer",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "APIc-challenge",
+						"value": "3ce6a8f633773cb67b69c7735d12d40d165eeb82eb660d75c1bfed6367b541f2"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bgpInst\": {\n        \"attributes\": {\n            \"asn\": \"12345\"\n        },\n        \"children\": [{\n            \"bgpDom\": {\n                \"attributes\": {\n                    \"name\": \"default\",\n                    \"rtrId\": \"7.7.7.7\"\n                }\n            }\n        }]\n    }\n}"
+				},
+				"url": {
+					"raw": "http://10.10.201.91/api/mo/sys/bgp/inst.json",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"201",
+						"91"
+					],
+					"path": [
+						"api",
+						"mo",
+						"sys",
+						"bgp",
+						"inst.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BGP INS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234Qwer",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "APIc-challenge",
+						"value": "3ce6a8f633773cb67b69c7735d12d40d165eeb82eb660d75c1bfed6367b541f2"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bgpInst\": {\n        \"attributes\": {\n            \"asn\": \"12345\"\n        },\n        \"children\": [{\n            \"bgpDom\": {\n                \"attributes\": {\n                    \"name\": \"default\",\n                    \"rtrId\": \"7.7.7.7\"\n                }\n            }\n        }]\n    }\n}"
+				},
+				"url": {
+					"raw": "http://10.10.201.91/api/mo/sys/bgp/inst.json",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"201",
+						"91"
+					],
+					"path": [
+						"api",
+						"mo",
+						"sys",
+						"bgp",
+						"inst.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL BGP",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234Qwer",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "APIc-challenge",
+						"value": "3ce6a8f633773cb67b69c7735d12d40d165eeb82eb660d75c1bfed6367b541f2"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bgpEntity\": {\n        \"children\": [{\n            \"bgpInst\": {\n                \"attributes\": {\n                    \"status\": \"deleted\"\n                }\n            }\n        }]\n    }\n}"
+				},
+				"url": {
+					"raw": "http://10.10.201.91/api/mo/sys/bgp.json",
+					"protocol": "http",
+					"host": [
+						"10",
+						"10",
+						"201",
+						"91"
+					],
+					"path": [
+						"api",
+						"mo",
+						"sys",
+						"bgp.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
